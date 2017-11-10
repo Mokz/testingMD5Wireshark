@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+	<h:form>
+		<p:growl id="growl" showDetail="true" sticky="true" />
+		
+		<p:panel header="Login - Demostracion MD5">
+			<p:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel value="Usuario" />
+				<p:inputText value="#{employeeController.employee.user}"></p:inputText>
+				<p:outputLabel value="Contraseña" />
+				<p:inputText value="#{employeeController.employee.pwd}"></p:inputText>
+				<p:outputLabel></p:outputLabel>
+				<p:commandButton value="Ingresar"
+					action="#{employeeController.saveEmployee(employeeController.employee)}" update="growl">
+				</p:commandButton>			
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>
